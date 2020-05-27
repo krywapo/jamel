@@ -1,0 +1,31 @@
+@mixin respond-to($breakpoint) {
+  $raw-query: map-get($breakpoints-max, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+                    type-of($raw-query) == 'string',
+                    unquote($raw-query),
+                    inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  }
+}
+
+@mixin respond-from($breakpoint) {
+  $raw-query: map-get($breakpoints-min, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+                    type-of($raw-query) == 'string',
+                    unquote($raw-query),
+                    inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  }
+}

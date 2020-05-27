@@ -1,0 +1,31 @@
+/**
+ * FONTS
+ */
+$raleway: 'Roboto', sans-serif;
+
+/*
+ * COLORS
+ */
+$white: #fff;
+$light_gray: #F5F5F5;
+$black: #000;
+
+/*
+ * BREAKPOINTS
+ */
+
+$small: 520px;
+$medium: 1024px;
+$large: 1200px;
+
+$breakpoints-max: (
+        'small': (max-width: $small),
+        'medium': (max-width: $medium),
+        'large': (max-width: $large),
+);
+
+$breakpoints-min: (
+        'small': (min-width: $small),
+        'medium': (min-width: $medium),
+        'large': (min-width: $large),
+);

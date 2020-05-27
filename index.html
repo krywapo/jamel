@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Jamel</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+
+  <body>
+
+    <div class="container-fluid" id="app">
+
+      <div class="row align-items-start">
+        <div class="col-md-6">
+          <h1>Top 100</h1>
+          <h2>iTunes Store</h2>
+        </div>
+
+        <div class="col-md-6 change-look">
+          <div class="change-look-button" v-on:click="changeLayout()">
+            Zmień kolorystykę
+          </div>
+        </div>
+      </div>
+
+      <div class="row items">
+        <div v-for="(info, index) in infos" :key="info.id" class="col-md-3 item">
+
+          <a v-bind:href="info.link.attributes.href">
+            <div class="item-image">
+              <img v-bind:src="info['im:image'][2].label" alt="">
+            </div>
+
+            <div class="item-others">
+              <div class="item-others-title">
+                {{info['im:name'].label}}
+              </div>
+
+              <div class="item-others-artist">
+                {{info['im:artist'].label}}
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
+</html>

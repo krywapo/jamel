@@ -1,0 +1,45 @@
+.change-look {
+  text-align: right;
+
+  @include respond-to('small') {
+    text-align: left;
+  }
+
+  &-button {
+    color: $white;
+    border: 1px solid $white;
+    background-color: transparent;
+    padding: 5px 20px;
+    font-size: 12px;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+
+    @include respond-to('small') {
+      margin-top: 20px;
+    }
+  }
+}
+
+.light {
+  .change-look {
+    &-button {
+      color: $black;
+      border: 1px solid $black;
+
+      &:hover {
+        background-color: $black;
+        color: $white;
+      }
+    }
+  }
+}
