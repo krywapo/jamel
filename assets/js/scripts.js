@@ -15,6 +15,14 @@ new Vue({
         changeLayout() {
             const body = document.body;
             body.classList.toggle('light');
+        },
+        additionalInfo(id) {
+            const ShowMoreEl = document.querySelector('#'+id);
+            ShowMoreEl.classList.add('active');
+        },
+        closeInfos(id) {
+            const Elements = document.querySelector('#'+id);
+            Elements.classList.remove('active');
         }
     },
 })
