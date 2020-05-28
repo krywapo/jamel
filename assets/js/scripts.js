@@ -3,7 +3,6 @@ new Vue({
     data () {
         return {
             infos: null,
-            blogs: []
         }
     },
     mounted () {
